@@ -6,13 +6,14 @@
     <packaging>pom</packaging>
     <name>parent</name>
     <scm>
-        <connection>scm:svn:file:///Software/nobackup/svnrepo/multimodule/trunk</connection>
-        <developerConnection>scm:svn:file:///Software/nobackup/svnrepo/multimodule/trunk</developerConnection>
+		<url>scm:git:git@github.com:leons727/multi-module-sample.git</url>
+		<connection>scm:git:git@github.com:leons727/multi-module-sample.git</connection>
+		<developerConnection>scm:git:git@github.com:leons727/multi-module-sample.git</developerConnection>
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <distributionManagement>
+<!--     <distributionManagement>
         <snapshotRepository>
             <id>ui-snapshot</id>
             <uniqueVersion>true</uniqueVersion>
@@ -24,7 +25,7 @@
             <url>http://localhost:8080/nexus/content/repositories/staging/</url>
         </repository>
     </distributionManagement>
-    <build>
+ -->    <build>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -38,10 +39,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.0-beta-9</version>
+                <version>2.2.1</version>
                 <inherited>true</inherited>
                 <configuration>
-                    <tagBase>file:///Software/nobackup/svnrepo/multimodule/releases/</tagBase>
                     <releaseProfiles>multimodule-tag-modules</releaseProfiles>
                 </configuration>
             </plugin>
@@ -61,7 +61,7 @@
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-scm-plugin</artifactId>
-                            <version>1.2</version>
+                            <version>1.4</version>
                             <executions>
                                 <execution>
                                     <id>multimodule-tag-modules</id>
@@ -69,7 +69,6 @@
                                     <phase>deploy</phase>
                                     <configuration>
                                         <goalsDirectory>..</goalsDirectory>
-                                        <tagBase>file:///Software/nobackup/svnrepo/multimodule/releases/</tagBase>
                                         <tag>${project.artifactId}-${project.version}</tag>
                                     </configuration>
                                     <goals>
