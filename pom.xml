@@ -5,6 +5,11 @@
     <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>parent</name>
+	<parent>
+		<groupId>com.decide</groupId>
+		<artifactId>decide-pom</artifactId>
+		<version>1.0.2</version>
+	</parent>
     <scm>
 		<url>scm:git:git@github.com:leons727/multi-module-sample.git</url>
 		<connection>scm:git:git@github.com:leons727/multi-module-sample.git</connection>
